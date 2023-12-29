@@ -71,3 +71,15 @@ router.post('/login', (req, res) => {
       }
   })
 });
+
+router.get('/checkToken', auth.authenticateToken, (req, res) => {
+  const token = req.headers.authorization.split('')[1];
+  jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err) => {
+      if (err) {
+          return res.status(403).json({ message: "Invalid Token" });
+      }
+      else {
+          return res.status(200).json({ message: "Valid Token" });
+      }
+  })
+});
