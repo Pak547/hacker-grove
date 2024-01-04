@@ -1,7 +1,7 @@
 const express = require('express');
-const connection = require('../connection');
 const router = express.Router();
 require('dotenv').config();
+
 // syntax for nodemailer
 const transporter = nodemailer.createTransport({
   service: ['gmail', 'yahoo'],
@@ -10,7 +10,6 @@ const transporter = nodemailer.createTransport({
       pass: process.env.EMAIL_PASSWORD
   }
 });
-
 // forgot password will send password to user email if user exists in database 
 router.post('/forgotpassword', async (req, res) => {
   try {
