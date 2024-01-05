@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "server.js"
   },
   "author": "",
   "license": "ISC",
@@ -23,8 +23,6 @@
     "handlebars": "^4.7.6",
     "connect-session-sequelize": "^7.0.4"
 
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.2"
   }
+  
 }
