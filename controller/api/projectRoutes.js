@@ -1,12 +1,11 @@
 const router = require('express').Router();
-const sequelize = require('../../config/connection');
 const { User, Project, Language, Tracking } = require('../../models');
 
 // GET all user
 router.get('/', async (req, res) => {
     try {
         const projectData = await User.findAll({
-            include: [{ model: user }, { model: Language }, { model: Tracking }],
+            include: [{ model: User }, { model: Language }, { model: Tracking }],
         });
         res.status(200).json(projectData);
     } catch (err) {
@@ -14,11 +13,11 @@ router.get('/', async (req, res) => {
     }
 });
 
-// GET one user
+// GET one user by ID
 router.get('/:id', async (req, res) => {
     try {
-        const userData = await User.findByPk(req.params.id, {
-            include: [{ model: user }, { model: Language }, { model: Tracking }],
+        const projectData = await User.findByPk(req.params.id, {
+            include: [{ model: User }, { model: Language }, { model: Tracking }],
         });
 
         if (!projectData) {
