@@ -1,0 +1,16 @@
+<div class="card project-card m-2">
+    <div class="card-body">
+        <h5 class="card-title">{{title}}</h5>
+        <p class="card-text">Description: {{description}}</p>
+        {{#if deploy_link}}
+        <a href="{{deploy_link}}" class="card-link">Check it out!</a>
+        {{/if}}
+        {{#if github_link}}
+        <a href="{{github_link}}" class="card-link">Github repository</a>
+        {{/if}}
+        <p class="card-text">Hours: {{hours}}</p>
+        <p class="card-text">Languages: {{languages}}</p>
+        <a href="updateProject.html" class="btn updateProjectPgBtn">Update project</a>
+        <a href="#" class="card-link">Delete</a>
+    </div>
+</div>
