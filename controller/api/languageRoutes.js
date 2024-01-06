@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const Language = require('../../models/Language');
-const withAuth = require('../../utils/auth');
 
 // GET all language
 router.get('/', async (req, res) => {
