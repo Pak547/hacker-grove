@@ -5,10 +5,10 @@
     "node": "20.x"
   },
   "description": "Coding tracker",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "server.js"
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
