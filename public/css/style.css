@@ -27,6 +27,12 @@ main {
     text-align: center;
 }
 
+.updateProjectPgBtn, .updateLanguagePgBtn {
+    background-color: olivedrab;
+    color: lightgoldenrodyellow;
+    text-align: center;
+}
+
 #waterBtn {
     background-color: rgb(155, 225, 225);
     color: darkblue;
