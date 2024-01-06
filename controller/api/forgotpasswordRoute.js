@@ -1,5 +1,4 @@
-const express = require('express');
-const router = express.Router();
+const router = require('express').Router();
 require('dotenv').config();
 const nodemailer = require('nodemailer');
 
@@ -44,3 +43,5 @@ router.post('/forgotpassword', async (req, res) => {
   }
 }
 );
+
+module.exports = router;

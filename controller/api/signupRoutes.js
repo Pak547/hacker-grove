@@ -1,5 +1,4 @@
-const express = require('express');
-const router = express.Router();
+const router = require('express').Router();
 require('dotenv').config();
 
 // signing up will enter information into database
@@ -21,3 +20,5 @@ router.post('/signup', async(req, res) => {
     }
 }
 );
+
+module.exports = router;
