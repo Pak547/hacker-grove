@@ -25,7 +25,7 @@ router.post('/forgotpassword', async (req, res) => {
         from: process.env.EMAIL,
         to: req.body.email,
         subject: 'Password Reset',
-        text: 'Your email is' + req.body.email + 'Your password is ' + userData.password
+        text: 'Your email is' + req.body.email + 'Your password is ' + req.body.password
       };
       // send email to user with password information  
       transporter.sendMail(mailOptions, function (error, info) {

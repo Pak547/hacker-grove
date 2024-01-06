@@ -4,7 +4,7 @@ const withAuth = require('../../utils/auth');
 
 
 // GET all user
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
         const projectData = await User.findAll({
             include: [{ model: User }, { model: Language }, { model: Tracking }],
@@ -14,9 +14,8 @@ router.get('/', async (req, res) => {
         res.status(500).json(err);
     }
 });
-
 // GET one user by ID
-router.get('/:id', async (req, res) => {
+router.get('/:id',withAuth, async (req, res) => {
     try {
         const projectData = await User.findByPk(req.params.id, {
             include: [{ model: User }, { model: Language }, { model: Tracking }],

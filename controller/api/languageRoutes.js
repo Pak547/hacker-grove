@@ -17,7 +17,8 @@ router.get('/:id', async (req, res) => {
         const languageData = await Language.findByPk(req.params.id);
 
         if (!languageData) {
-            res.status(404).json({ message: 'No language found with that id!' });
+            res.status(404).json({ message: 'Thats not a real language!' });
+            // i dont have baptics on my keyboard sorry lol
             return;
         }
 
