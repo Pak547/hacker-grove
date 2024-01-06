@@ -33,7 +33,7 @@ router.get('/:id',withAuth, async (req, res) => {
 });
 
 // POST route to upload data to db
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const projectData = await Project.create({
             project_id: req.body.project_id,

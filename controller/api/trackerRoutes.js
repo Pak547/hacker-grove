@@ -3,7 +3,7 @@ const Tracking = require('../../models/Tracking');
 const withAuth = require('../../utils/auth');
 
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
       const trackingData = await Tracking.findAll({
           include: [{ model: Tracking }],
@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
   try {
       const trackingData = await Tracking.findByPk(req.params.id, {
           include: [{ model: Tracking }],
@@ -34,7 +34,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // POST route to upload data to db
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
   try {
       const trackingData = await Tracking.create({
           project_id: req.body.project_id,
