@@ -2,7 +2,7 @@ const router = require('express').Router();
 require('dotenv').config();
 
 // signing up will enter information into database
-router.post('/signup', async(req, res) => {
+router.post('/signup', async (req, res) => {
     // add User to database
     try {
         const userData = await User.create({

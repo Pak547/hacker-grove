@@ -1,7 +1,7 @@
 const Language = require('./Language')
 const User = require('./User');
 const Project = require('./Project');
-const Tracking =require('./Tracking')
+const Tracking = require('./Tracking')
 
 User.hasMany(Project, {
     foreignKey: 'user_id',

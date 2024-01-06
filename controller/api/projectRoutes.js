@@ -53,25 +53,25 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
     // update a project by its id value
     try {
-      const projectData = await Category.update(
-        {
-          project_name: req.body.project_name,
-        },
-        {
-          where: {
-            id: req.params.id,
-          },
+        const projectData = await Category.update(
+            {
+                project_name: req.body.project_name,
+            },
+            {
+                where: {
+                    id: req.params.id,
+                },
+            }
+        );
+        if (!projectData) {
+            res.status(404).json({ message: 'No project found with that id!' });
+            return;
         }
-      );
-      if(!projectData) {
-        res.status(404).json({ message: 'No project found with that id!'});
-        return;
-      }
-      res.status(200).json(projectData);
+        res.status(200).json(projectData);
     } catch (err) {
-      res.status(400).json(err);
+        res.status(400).json(err);
     }
-  });
+});
 
 // DELETE route to remove existing data from db
 router.delete('/:id', (req, res) => {
