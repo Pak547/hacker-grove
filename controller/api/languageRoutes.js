@@ -2,6 +2,7 @@ const router = require('express').Router();
 const Language = require('../../models/Language');
 const withAuth = require('../../utils/auth');
 
+
 router.get('/', async (req, res) => {
     try {
         const languageData = await Language.findAll({
