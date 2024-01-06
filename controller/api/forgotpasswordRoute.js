@@ -1,14 +1,13 @@
-const express = require('express');
-const router = express.Router();
+const router = require('express').Router();
 require('dotenv').config();
 const nodemailer = require('nodemailer');
 
 // syntax for nodemailer
 const transporter = nodemailer.createTransport({
-  service: ['gmail', 'yahoo'],
+  service: 'gmail',
   auth: {
-      user: process.env.EMAIL,
-      pass: process.env.EMAIL_PASSWORD
+    user: process.env.EMAIL,
+    pass: process.env.EMAIL_PASSWORD
   }
 });
 // forgot password will send password to user email if user exists in database 
@@ -44,3 +43,5 @@ router.post('/forgotpassword', async (req, res) => {
   }
 }
 );
+
+module.exports = router;

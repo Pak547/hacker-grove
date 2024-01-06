@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Language extends Model {}
+class Language extends Model { }
 
 Language.init(
   {
@@ -21,8 +21,8 @@ Language.init(
       defaultValue: 0,
     },
     language: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     user_id: {
       type: DataTypes.INTEGER,
