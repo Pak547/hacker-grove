@@ -28,4 +28,13 @@ router.get('/signup', async (req, res) => {
 }
 );
 
+router.get('/forgotPassword', async (req, res) => {
+    try {
+        res.render('forgotPassword');
+    } catch (err) {
+        res.status(500).json(err);
+    }
+}
+);
+
 module.exports = router;

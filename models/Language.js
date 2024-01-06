@@ -11,10 +11,6 @@ Language.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    username: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     hours: {
       type: DataTypes.INTEGER,
       allowNull: false,

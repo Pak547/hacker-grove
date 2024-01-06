@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(195, 209, 145, 0.941);
+
+}
+
+header {
+    background-color: olivedrab;
+    color: lightgoldenrodyellow;
+}
+
+main {
+    background-color: rgba(195, 209, 145, 0.941);
+    margin: 0;
+    padding: 0;
+}
+
+.login-card, .signup-card, .forgot-password-card {
+    color: rgb(63, 85, 20);
+}
+
+
+#loginPgBtn, #logout, #signupPgBtn, #loginBtn, #signupBtn, #forgotPasswordBtn, #retrievePasswordBtn, #addProjectBtn, #addLanguageBtn, #updateLanguageBtn, #updateProjectBtn, #newProjectPgBtn, #newLanguagePgBtn {
+    background-color: lightgoldenrodyellow;
+    color: olivedrab;
+    text-align: center;
+}
+
+.updateProjectPgBtn, .updateLanguagePgBtn {
+    background-color: olivedrab;
+    color: lightgoldenrodyellow;
+    text-align: center;
+}
+
+#waterBtn {
+    background-color: rgb(155, 225, 225);
+    color: darkblue;
+    text-align: center;
+}
+
+.language-card, .project-card {
+    background-color: lightgoldenrodyellow;
+    color: olivedrab;
+}
+
+#joinHG {
+    margin: 5px;
+    border: olivedrab;
+}
+
+#overview, #username {
+    color: rgb(63, 85, 20);
+}
+
+#progressPlant, #welcome{
+    display: inline;
+    margin-left: 5px,
+}
