@@ -31,6 +31,7 @@ router.put('/:id', async (req, res) => {
     try {
         const languageData = await Language.update(
             {
+                hours: req.body.hours,
                 language: req.body.language,
             },
             {
