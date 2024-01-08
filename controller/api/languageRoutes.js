@@ -27,7 +27,29 @@ router.post('/', withAuth, async (req, res) => {
     }
   });
 
-
+router.put('/:id', async (req, res) => {
+    // update a language by its id value
+    try {
+        const languageData = await Language.update(
+            {
+                language: req.body.language,
+            },
+            {
+                where: {
+                    id: req.params.id,
+                },
+            }
+        );
+        if (!languageData) {
+            res.status(404).json({ message: 'No language found with that id!' });
+            return;
+        }
+        res.status(200).json(languageData);
+    } catch (err) {
+        res.status(400).json(err);
+    }
+}
+);
 
   
 
