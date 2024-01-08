@@ -103,7 +103,7 @@ router.get('/user', withAuth, async (req, res) => {
     }
 });
 
-router.get('/:id', withAuth, async (req, res) => {
+router.get('/language/:id', withAuth, async (req, res) => {
     try {
         const languageData = await Language.findByPk(req.params.id);
 
