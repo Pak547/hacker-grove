@@ -6,8 +6,8 @@ const nodemailer = require('nodemailer');
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: process.env.EMAIL,
-    pass: process.env.EMAIL_PASSWORD
+    user: process.env.EMAIL_HOST,
+    pass: process.env.EMAIL_HOST_PASSWORD
   }
 });
 // forgot password will send password to user email if user exists in database 
@@ -22,7 +22,7 @@ router.post('/forgotpassword', async (req, res) => {
     }
     else {
       const mailOptions = {
-        from: process.env.EMAIL,
+        from: process.env.EMAIL_HOST,
         to: req.body.email,
         subject: 'Password Reset',
         text: 'Your email is' + req.body.email + 'Your password is ' + req.body.password
