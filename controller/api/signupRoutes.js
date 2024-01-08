@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { User } = require('../../models');
 require('dotenv').config();
 
 // signing up will enter information into database
