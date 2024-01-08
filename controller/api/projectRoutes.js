@@ -54,7 +54,7 @@ router.post('/', withAuth, async (req, res) => {
 router.put('/:id', async (req, res) => {
     // update a project by its id value
     try {
-        const projectData = await Category.update(
+        const projectData = await Project.update(
             {
                 project_name: req.body.project_name,
             },
