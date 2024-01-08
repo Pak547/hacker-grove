@@ -3,38 +3,38 @@
         <div class="mb-3 row">
             <label for="projectName" class="col-9 col-sm-2 col-form-label">Project name:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="projectName">
+                <input type="text" class="form-control" id="projectName">{{title}}</input>
             </div>
         </div>
         <div class="mb-3 row">
             <label for="description" class="col-9 col-sm-2 col-form-label">Description:</label>
             <div class="col-sm-10">
                 <textarea type="text" class="form-control" rows="3" id="description"
-                    placeholder="Tell us a little about your project!"></textarea>
+                    placeholder="Tell us a little about your project!">{{description}}</textarea>
             </div>
         </div>
         <div class="mb-3 row">
             <label for="projectHours" class="col-9 col-sm-2 col-form-label">Hours:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="projectHours">
+                <input type="text" class="form-control" id="projectHours">{{hours}}</input>
             </div>
         </div>
         <div class="mb-3 row">
             <label for="projectLink" class="col-9 col-sm-2 col-form-label">Deployed link:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="projectLink">
+                <input type="text" class="form-control" id="projectLink">{{deploy_link}}</input>
             </div>
         </div>
         <div class="mb-3 row">
             <label for="githubRepoLink" class="col-9 col-sm-2 col-form-label">Github repository link:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="githubRepoLink">
+                <input type="text" class="form-control" id="githubRepoLink">{{github_link}}</input>
             </div>
         </div>
         <div class="mb-3 row">
             <label for="projectLanguages" class="col-9 col-sm-2 col-form-label">Languages used:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="projectLanguages">
+                <input type="text" class="form-control" id="projectLanguages">{{languages}}</input>
             </div>
         </div>
         <button class="btn btn-lg m-2" type="submit" id="updateProjectBtn">Update project</button>
