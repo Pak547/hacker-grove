@@ -14,23 +14,6 @@ router.get('/', withAuth, async (req, res) => {
         res.status(500).json(err);
     }
 });
-// GET one user by ID
-router.get('/:id',withAuth, async (req, res) => {
-    try {
-        const projectData = await User.findByPk(req.params.id, {
-            include: [{ model: User }, { model: Language }, { model: Tracking }],
-        });
-
-        if (!projectData) {
-            res.status(404).json({ message: 'No project found with that id!' });
-            return;
-        }
-
-        res.status(200).json(projectData);
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
 
 // POST route to upload data to db
 router.post('/', withAuth, async (req, res) => {
