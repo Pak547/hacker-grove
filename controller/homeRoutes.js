@@ -89,7 +89,7 @@ router.get('/user', withAuth, async (req, res) => {
                     model: Tracking,
                     attributes: [
                         'id',
-                        'hours',
+                        'totalHours',
                         'user_id',
                     ],
                 }

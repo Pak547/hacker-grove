@@ -11,7 +11,7 @@ Tracking.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    totalHours: {
+    total_hours: {
       type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: 0,

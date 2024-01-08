@@ -7,7 +7,6 @@ router.get('/', withAuth, async (req, res) => {
   try {
       const trackingData = await Tracking.findAll({
           include: [{ model: Tracking }],
-          // do we want to include the user here?
       });
       res.status(200).json(trackingData);
   } catch (err) {
@@ -19,7 +18,6 @@ router.get('/:id', withAuth, async (req, res) => {
   try {
       const trackingData = await Tracking.findByPk(req.params.id, {
           include: [{ model: Tracking }],
-          // do we want to include the user here?
       });
 
       if (!trackingData) {
