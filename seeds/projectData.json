@@ -1,23 +1,32 @@
 [
-    {
+    {   
+        "id":"1",
         "title":"Hello World",
         "description":"This is a test post",
+        "hours":"2",
         "languages":"typescript",
         "deploy_link":"https://www.google.com",
-        "github_link":"https://www.google.com"
+        "github_link":"https://www.google.com",
+        "user_id":"1"
     },
     {
+        "id":"2",
         "title":"Goodbye World",
         "description":"This is a fun post",
+        "hours":"1",
         "languages":"javascript",
         "deploy_link":"https://www.google.com",
-        "github_link":"https://www.google.com"
+        "github_link":"https://www.google.com",
+        "user_id":"2"
     },
     {
+        "id":"3",
         "title":"Please pass us",
         "description":"This is a sad post",
+        "hours":"20",
         "languages":"python",
         "deploy_link":"https://www.google.com",
-        "github_link":"https://www.google.com"
+        "github_link":"https://www.google.com",
+        "user_id":"3"
     }
 ]
