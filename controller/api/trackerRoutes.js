@@ -2,18 +2,6 @@ const router = require('express').Router();
 const Tracking = require('../../models/Tracking');
 const withAuth = require('../../utils/auth');
 
-
-router.get('/', withAuth, async (req, res) => {
-  try {
-      const trackingData = await Tracking.findAll({
-          include: [{ model: Tracking }],
-      });
-      res.status(200).json(trackingData);
-  } catch (err) {
-      res.status(500).json(err);
-  }
-});
-
 router.get('/:id', withAuth, async (req, res) => {
   try {
       const trackingData = await Tracking.findByPk(req.params.id, {
