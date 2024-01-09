@@ -1,16 +1,15 @@
 const router = require('express').Router();
 const Language = require('../../models/Language');
-const withAuth = require('../../utils/auth');
 
 //POST route to upload new language to db
-router.post('/', withAuth, async (req, res) => {
+router.post('/', async (req, res) => {
     try {
+        console.log(7, req.body);
       const newLanguage = await Language.create({
-        language: req.body.language,
-        hours: req.body.hours,
+        ...req.body,
         user_id: req.session.user_id,
       });
-  
+      console.log(newLanguage);
       res.status(200).json(newLanguage);
     } catch (err) {
       res.status(400).json(err);

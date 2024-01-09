@@ -1,6 +1,5 @@
 const router = require('express').Router();
-const { Project, User, Language, Tracking } = require('../models');
-const withAuth = require('../utils/auth');
+const { Project, User, Language } = require('../models');
 
 router.get('/', async (req, res) => {
     try {
@@ -38,7 +37,25 @@ router.get('/forgotPassword', async (req, res) => {
 }
 );
 
-router.get('/project/:id', withAuth, async (req, res) => {
+router.get('/newLanguage', async (req, res) => {
+    try {
+        res.render('newLanguage');
+    } catch (err) {
+        res.status(500).json(err);
+    }
+}
+);
+
+router.get('/newProject', async (req, res) => {
+    try {
+        res.render('newProject');
+    } catch (err) {
+        res.status(500).json(err);
+    }
+}
+);
+
+router.get('/project/:id', async (req, res) => {
     try {
         const projectData = await Project.findByPk(req.params.id);
         const project = projectData.get({ plain: true });
@@ -51,22 +68,22 @@ router.get('/project/:id', withAuth, async (req, res) => {
     }
 });
 
-router.get('/user', withAuth, async (req, res) => {
+router.get('/user', async (req, res) => {
     try {
         const userData = await User.findByPk(req.session.user_id, {
             include: [
                 {
-                    model: Project,
-                    attributes: [
-                        'id',
-                        'title',
-                        'description',
-                        'hours',
-                        'languages',
-                        'deploy_link',
-                        'github_link',
-                        'user_id'
-                    ],
+                    model: Project
+                    // attributes: [
+                    //     'id',
+                    //     'title',
+                    //     'description',
+                    //     'hours',
+                    //     'languages',
+                    //     'deploy_link',
+                    //     'github_link',
+                    //     'user_id'
+                    // ],
                 },
                 {
                     model: Language,
@@ -76,26 +93,35 @@ router.get('/user', withAuth, async (req, res) => {
                         'language',
                         'user_id'
                     ],
-                },
-                {
-                    model: Tracking,
-                    attributes: [
-                        'id',
-                        'totalHours',
-                        'user_id',
-                    ],
                 }
+                // {
+                //     model: Tracking,
+                //     attributes: [
+                //         'id',
+                //         'totalHours',
+                //         'user_id',
+                //     ],
+                // }
             ],
         });
-        const user = userData.get({ plain: true });
-        res.render('user', { user, loggedIn: true });
+
+        // Serialize data so the template can read it
+        // const projects = projectData.map((project) => project.get({ plain: true }));
+
+        if (userData) {
+            const user = userData.get({ plain: true });
+            console.log(113, user);
+            res.render('user', { user, loggedIn: true });
+        } else {
+            res.status(400).json("User not found!")
+        }
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
     }
 });
 
-router.get('/language/:id', withAuth, async (req, res) => {
+router.get('/language/:id', async (req, res) => {
     try {
         const languageData = await Language.findByPk(req.params.id);
         const language = languageData.get({ plain: true });
