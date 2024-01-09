@@ -2,24 +2,11 @@ const router = require('express').Router();
 const { User, Project, Language, Tracking } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-
-// GET all user
-router.get('/', withAuth, async (req, res) => {
-    try {
-        const projectData = await User.findAll({
-            include: [{ model: User }, { model: Language }, { model: Tracking }],
-        });
-        res.status(200).json(projectData);
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
-
 // POST route to upload data to db
 router.post('/', withAuth, async (req, res) => {
     try {
         const projectData = await Project.create({
-            id: req.session.id,
+            user_id: req.session.user_id,
             title: req.body.title,
             description: req.body.description,
             hours: req.body.hours,

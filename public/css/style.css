@@ -5,7 +5,7 @@ body {
 
 }
 
-header {
+header, footer {
     background-color: olivedrab;
     color: lightgoldenrodyellow;
 }
@@ -56,4 +56,9 @@ main {
 #progressPlant, #welcome{
     display: inline;
     margin-left: 5px,
+}
+
+.gitLink {
+    display: inline;
+    color: lightgoldenrodyellow;
 }
