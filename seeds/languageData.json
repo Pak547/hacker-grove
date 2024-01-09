@@ -1,0 +1,20 @@
+[
+    {
+        "id":1,
+        "hours":0,
+        "language":"javascript",
+        "user_id":1
+    },
+    {
+        "id":2,
+        "hours":2,
+        "language":"python",
+        "user_id":2
+    },
+    {
+        "id":3,
+        "hours":3,
+        "language":"java",
+        "user_id":3
+    }
+]
