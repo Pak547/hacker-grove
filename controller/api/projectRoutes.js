@@ -19,7 +19,7 @@ router.get('/', withAuth, async (req, res) => {
 router.post('/', withAuth, async (req, res) => {
     try {
         const projectData = await Project.create({
-            project_id: req.body.project_id,
+            id: req.session.id,
             title: req.body.title,
             description: req.body.description,
             hours: req.body.hours,
@@ -39,7 +39,12 @@ router.put('/:id', async (req, res) => {
     try {
         const projectData = await Project.update(
             {
-                project_name: req.body.project_name,
+                title: req.body.title,
+                description: req.body.description, 
+                hours: req.body.hours,
+                languages: req.body.languages,
+                deploy_link: req.body.deploy_link,
+                github_link: req.body.github_link,
             },
             {
                 where: {

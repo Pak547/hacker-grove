@@ -40,14 +40,7 @@ router.get('/forgotPassword', async (req, res) => {
 
 router.get('/project/:id', withAuth, async (req, res) => {
     try {
-        const projectData = await Project.findByPk(req.params.id, {
-            include: [
-                {
-                    model: User,
-                    attributes: ['name'],
-                },
-            ],
-        });
+        const projectData = await Project.findByPk(req.params.id);
         const project = projectData.get({ plain: true });
         res.render('updateProject', {
             ...project,
@@ -84,7 +77,6 @@ router.get('/user', withAuth, async (req, res) => {
                         'user_id'
                     ],
                 },
-                // future work
                 {
                     model: Tracking,
                     attributes: [
@@ -106,13 +98,11 @@ router.get('/user', withAuth, async (req, res) => {
 router.get('/language/:id', withAuth, async (req, res) => {
     try {
         const languageData = await Language.findByPk(req.params.id);
-
-        if (!languageData) {
-            res.status(404).json({ message: 'We could not find that language!' });
-            return;
-        }
-
-        res.status(200).json(languageData);
+        const language = languageData.get({ plain: true });
+        res.render('updateLanguage', {
+            ...language,
+            logged_in: req.session.logged_in
+        });
     } catch (err) {
         res.status(500).json(err);
     }
