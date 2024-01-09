@@ -10,7 +10,6 @@ Hackergrove is a habit-tracking web application specifically designed for coding
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
-- [Contributing](#contributing)
 - [Tests](#tests)
 
 ## Feature
@@ -32,7 +31,7 @@ Nodemailer Integration: Stay connected with email notifications through Nodemail
 
 ## Installation
 
-Clone the repository: git clone https://github.com/your-username/hackergrove.git 
+Clone the repository: git clone https://github.com/Pak547/hacker-grove.git 
 Navigate to the project directory: cd hackergrove
 Install dependencies: npm install 
 Set up your MySQL database: Create a new database and configure the connection in config/connection.js. 
@@ -46,6 +45,10 @@ Hackergrove is developed and maintained by a passionate team of three individual
 Pakapong Mongkol
 Elise Stankus
 Bryan Chia
+
+## Tests
+
+Seeds.js and other mock data can be utilized
 
 ## License 
 
