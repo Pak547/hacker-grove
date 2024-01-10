@@ -31,3 +31,12 @@ const delProjectButtonHandler = async (event) => {
         }
     }
 };
+
+document
+  .querySelector('.language-list')
+  .addEventListener('click', delLanguageButtonHandler);
+
+  document
+  .querySelector('.project-list')
+  .addEventListener('click', delProjectButtonHandler);
+
