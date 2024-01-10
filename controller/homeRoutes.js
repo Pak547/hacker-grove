@@ -69,7 +69,7 @@ router.get('/project/:id', async (req, res) => {
     }
 });
 
-router.get('/user', withAuth, async (req, res) => {
+router.get('/user', async (req, res) => {
     try {
         const userData = await User.findByPk(req.session.user_id, {
             include: [
