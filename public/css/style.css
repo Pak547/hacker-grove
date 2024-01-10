@@ -53,7 +53,7 @@ main {
     border: olivedrab;
 }
 
-#overview, #username {
+#overview, #username, .userHeader {
     color: rgb(63, 85, 20);
 }
 

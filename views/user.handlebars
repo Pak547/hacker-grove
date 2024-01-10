@@ -5,7 +5,7 @@
 <section class="container" id="trackers">
     <div class="row">
         <div id="languages" class="col col-12 col-lg-6">
-            <h4 class="my-3">Languages:</h4>
+            <h4 class="my-3 userHeader">Languages:</h4>
             <a class="btn btn-lg" href="./newLanguage" role="button" id="newLanguagePgBtn">Add a language</a>
             {{#if user.languages.length}}
             <div class="language-list">
@@ -16,7 +16,7 @@
             {{/if}}
         </div>
         <div id="projects" class="col col-12 col-lg-6">
-                <h4 class="my-3">Projects:</h4>
+                <h4 class="my-3 userHeader">Projects:</h4>
                 <a class="btn btn-lg" href="./newProject" role="button" id="newProjectPgBtn">Add a project</a>
                 {{#if user.projects.length}}
                 <div class="project-list">
