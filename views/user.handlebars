@@ -8,9 +8,11 @@
         <div id="languages" class="col col-12 col-lg-6">
             <h4 class="my-3">Languages:</h4>
             <a class="btn btn-lg" href="./newLanguage" role="button" id="newLanguagePgBtn">Add a language</a>
+            {{#if user.languages.length}}
             {{#each user.languages as |language|}}
             {{> language-details}}
             {{/each}}
+            {{/if}}
             <div id="projects" class="col col-12 col-lg-6">
                 <h4 class="my-3">Projects:</h4>
                 <a class="btn btn-lg" href="./newProject" role="button" id="newProjectPgBtn">Add a project</a>
