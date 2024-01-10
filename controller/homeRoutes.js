@@ -105,8 +105,12 @@ router.get('/user', async (req, res) => {
                 // }
             ],
         });
-        const user = userData.get({ plain: true });
-        res.render('user', { user, loggedIn: true });
+        if (userData) {
+            const user = userData.get({ plain: true });
+            res.render('user', { user, loggedIn: true });
+        } else {
+            res.status(400).json("User not found!")
+        }
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
