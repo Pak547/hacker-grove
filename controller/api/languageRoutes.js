@@ -6,8 +6,7 @@ const Language = require('../../models/Language');
 router.post('/', async (req, res) => {
     try {
       const newLanguage = await Language.create({
-        language: req.body.language,
-        hours: req.body.hours,
+        ...req.body,
         user_id: req.session.user_id,
       });
   
