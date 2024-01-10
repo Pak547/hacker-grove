@@ -94,15 +94,15 @@ router.get('/user', async (req, res) => {
                         'language',
                         'user_id'
                     ],
-                },
-                {
-                    model: Tracking,
-                    attributes: [
-                        'id',
-                        'totalHours',
-                        'user_id',
-                    ],
                 }
+                // {
+                //     model: Tracking,
+                //     attributes: [
+                //         'id',
+                //         'totalHours',
+                //         'user_id',
+                //     ],
+                // }
             ],
         });
         const user = userData.get({ plain: true });
