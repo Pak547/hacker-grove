@@ -56,7 +56,7 @@ router.get('/newProject', async (req, res) => {
 }
 );
 
-router.get('/project/:id', withAuth, async (req, res) => {
+router.get('/project/:id', async (req, res) => {
     try {
         const projectData = await Project.findByPk(req.params.id);
         const project = projectData.get({ plain: true });
