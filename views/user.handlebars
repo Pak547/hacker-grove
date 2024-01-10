@@ -13,7 +13,8 @@
             {{> language-details}}
             {{/each}}
             {{/if}}
-            <div id="projects" class="col col-12 col-lg-6">
+        </div>
+        <div id="projects" class="col col-12 col-lg-6">
                 <h4 class="my-3">Projects:</h4>
                 <a class="btn btn-lg" href="./newProject" role="button" id="newProjectPgBtn">Add a project</a>
                 {{#if user.projects.length}}
@@ -21,7 +22,6 @@
                 {{> project-details}}
                 {{/each}}
                 {{/if}}
-            </div>
         </div>
 </section>
 <script src="/js/user.js"></script>
