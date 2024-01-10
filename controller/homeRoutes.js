@@ -47,6 +47,15 @@ router.get('/newLanguage', async (req, res) => {
 }
 );
 
+router.get('/newProject', async (req, res) => {
+    try {
+        res.render('newProject');
+    } catch (err) {
+        res.status(500).json(err);
+    }
+}
+);
+
 router.get('/project/:id', withAuth, async (req, res) => {
     try {
         const projectData = await Project.findByPk(req.params.id);
