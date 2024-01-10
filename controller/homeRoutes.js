@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Project, User, Language, Tracking } = require('../models');
-const withAuth = require('../utils/auth');
+//const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
     try {
@@ -32,6 +32,15 @@ router.get('/signup', async (req, res) => {
 router.get('/forgotPassword', async (req, res) => {
     try {
         res.render('forgotPassword');
+    } catch (err) {
+        res.status(500).json(err);
+    }
+}
+);
+
+router.get('/newLanguage', async (req, res) => {
+    try {
+        res.render('newLanguage');
     } catch (err) {
         res.status(500).json(err);
     }
