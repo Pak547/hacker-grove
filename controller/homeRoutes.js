@@ -117,7 +117,7 @@ router.get('/user', async (req, res) => {
     }
 });
 
-router.get('/language/:id', withAuth, async (req, res) => {
+router.get('/language/:id', async (req, res) => {
     try {
         const languageData = await Language.findByPk(req.params.id);
         const language = languageData.get({ plain: true });
