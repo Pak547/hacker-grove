@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const { User, Project, Language, Tracking } = require('../../models');
-const withAuth = require('../../utils/auth');
+//const withAuth = require('../../utils/auth');
 
 // POST route to upload data to db
-router.post('/', withAuth, async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const projectData = await Project.create({
             user_id: req.session.user_id,

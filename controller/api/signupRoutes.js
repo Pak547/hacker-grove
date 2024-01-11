@@ -6,11 +6,7 @@ require('dotenv').config();
 router.post('/signup', async (req, res) => {
     // add User to database
     try {
-        const userData = await User.create({
-            name: req.body.name,
-            email: req.body.email,
-            password: req.body.password
-        });
+        const userData = await User.create(req.body);
         req.session.save(() => {
             req.session.user_id = userData.id;
             req.session.logged_in = true;

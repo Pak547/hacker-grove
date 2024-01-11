@@ -38,6 +38,24 @@ router.get('/forgotPassword', async (req, res) => {
 }
 );
 
+router.get('/newLanguage', async (req, res) => {
+    try {
+        res.render('newLanguage', {logged_in:req.session.logged_in});
+    } catch (err) {
+        res.status(500).json(err);
+    }
+}
+);
+
+router.get('/newProject', async (req, res) => {
+    try {
+        res.render('newProject', {logged_in: req.session.logged_in});
+    } catch (err) {
+        res.status(500).json(err);
+    }
+}
+);
+
 router.get('/project/:id', withAuth, async (req, res) => {
     try {
         const projectData = await Project.findByPk(req.params.id);
@@ -76,19 +94,23 @@ router.get('/user', withAuth, async (req, res) => {
                         'language',
                         'user_id'
                     ],
-                },
-                {
-                    model: Tracking,
-                    attributes: [
-                        'id',
-                        'totalHours',
-                        'user_id',
-                    ],
                 }
+                // {
+                //     model: Tracking,
+                //     attributes: [
+                //         'id',
+                //         'totalHours',
+                //         'user_id',
+                //     ],
+                // }
             ],
         });
-        const user = userData.get({ plain: true });
-        res.render('user', { user, loggedIn: true });
+        if (userData) {
+            const user = userData.get({ plain: true });
+            res.render('user', { user, logged_in: true });
+        } else {
+            res.status(400).json("User not found!")
+        }
     } catch (err) {
         console.log(err);
         res.status(500).json(err);

@@ -10,10 +10,14 @@ header, footer {
     color: lightgoldenrodyellow;
 }
 
+footer {
+    height: 60px;
+}
+
 main {
     background-color: rgba(195, 209, 145, 0.941);
     margin: 0;
-    padding: 0;
+    padding-bottom: 65px;
 }
 
 .login-card, .signup-card, .forgot-password-card {
@@ -49,7 +53,7 @@ main {
     border: olivedrab;
 }
 
-#overview, #username {
+#overview, #username, .userHeader {
     color: rgb(63, 85, 20);
 }
 
