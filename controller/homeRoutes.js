@@ -40,7 +40,7 @@ router.get('/forgotPassword', async (req, res) => {
 
 router.get('/newLanguage', async (req, res) => {
     try {
-        res.render('newLanguage');
+        res.render('newLanguage', {logged_in:req.session.logged_in});
     } catch (err) {
         res.status(500).json(err);
     }
@@ -49,7 +49,7 @@ router.get('/newLanguage', async (req, res) => {
 
 router.get('/newProject', async (req, res) => {
     try {
-        res.render('newProject');
+        res.render('newProject', {logged_in: req.session.logged_in});
     } catch (err) {
         res.status(500).json(err);
     }
