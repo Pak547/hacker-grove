@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Project, User, Language, Tracking } = require('../models');
-//const withAuth = require('../utils/auth');
+const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
     try {
@@ -56,7 +56,7 @@ router.get('/newProject', async (req, res) => {
 }
 );
 
-router.get('/project/:id', async (req, res) => {
+router.get('/project/:id', withAuth, async (req, res) => {
     try {
         const projectData = await Project.findByPk(req.params.id);
         const project = projectData.get({ plain: true });
@@ -69,7 +69,7 @@ router.get('/project/:id', async (req, res) => {
     }
 });
 
-router.get('/user', async (req, res) => {
+router.get('/user', withAuth, async (req, res) => {
     try {
         const userData = await User.findByPk(req.session.user_id, {
             include: [
@@ -117,7 +117,7 @@ router.get('/user', async (req, res) => {
     }
 });
 
-router.get('/language/:id', async (req, res) => {
+router.get('/language/:id', withAuth, async (req, res) => {
     try {
         const languageData = await Language.findByPk(req.params.id);
         const language = languageData.get({ plain: true });
